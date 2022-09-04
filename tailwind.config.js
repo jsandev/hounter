@@ -10,6 +10,12 @@ module.exports = {
     colors: {
       transparent: "transparent",
       white: "#FFFFFF",
+      bluedark: "#1B1C57",
+      orange: "#F59E0B",
+      green700: "#047857",
+      green500: "#10B981",
+      green100: "#D1FAE5",
+      gray: "#888B97",
     },
     height: {
       none: "none",
