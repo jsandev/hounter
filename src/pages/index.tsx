@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,9 +6,24 @@ import { FiMenu } from "react-icons/fi";
 
 import { Avatar } from "components/Avatar";
 
-import { IconChevronRight, IconColorBlur1, IconLogo, IconMap } from "assets/icons";
+import {
+  IconAparment,
+  IconChevronRight,
+  IconColorBlur1,
+  IconHouse,
+  IconLogo,
+  IconMap,
+  IconVilla,
+} from "assets/icons";
+import styled from "styled-components";
+import { hideScroll } from "styles/ui";
+import { Card, TCard } from "components/Card";
+import { featuredHouse } from "lib/data";
+import classNames from "classnames";
 
 const Home: NextPage = () => {
+  const [filterFeaturedHouse, setFilterFeaturedHouse] = useState<TCard>("HOUSE");
+
   return (
     <div className="w-full h-full flex flex-col overflow-hidden">
       <section className="relative w-full max-w-[79rem] mx-auto h-full lg:max-h-[45rem] grid grid-cols-1 items-end justify-items-center lg:justify-items-end lg:grid-cols-[auto_minmax(37.5rem,45rem)] px-[1rem] py-[7.5rem] lg:py-0 xs:px-[1.5rem] lg:px-[2rem]">
@@ -64,14 +80,19 @@ const Home: NextPage = () => {
           <div className="absolute left-0 bottom-[0.375rem] w-full grid grid-cols-[20.5rem_12.625rem_20rem] grid-flow-col gap-[1rem] p-[3rem] pt-0 rounded-bl-[5rem]">
             <div className="bg-white flex items-center gap-[1rem] p-[1.5rem] rounded-[2rem]">
               <div className="flex flex-row flex-nowrap items-center">
-                <Avatar src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tYnJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
+                <Avatar
+                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tYnJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  bordered
+                />
                 <Avatar
                   src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVqZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                   className="-ml-[1.75rem] z-[1]"
+                  bordered
                 />
                 <Avatar
                   src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhvbWJyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                   className="-ml-[1.75rem] z-[2]"
+                  bordered
                 />
               </div>
               <div className="flex flex-col gap-[0.125rem]">
@@ -149,8 +170,92 @@ const Home: NextPage = () => {
           </div>
         </header>
       </section>
+      <section className="w-full max-w-[79rem] mx-auto flex flex-col gap-[2.5rem] px-[1rem] pt-0 lg:pt-[7.5rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-[1rem] md:gap-0">
+          <div className="flex flex-col">
+            <div className="flex flex-row items-center gap-[0.5rem]">
+              <span className="hidden xs:block w-[2rem] h-[0.0625rem] bg-orange"></span>
+              <h6 className="font-medium text-[0.875rem] text-orange">Our Recommendation</h6>
+            </div>
+            <h1 className="font-semibold text-[2rem] text-bluedark xs:pl-[2.5rem]">
+              Featured House
+            </h1>
+          </div>
+
+          <div className="flex flex-row flex-wrap items-center gap-[1rem] xs:pl-[2.5rem] lg:pl-0">
+            <div
+              className={classNames(
+                "group hover:bg-green100 hover:border-green100 hover:text-green500 border flex items-center gap-[0.5rem] font-medium text-[0.875rem] px-[1rem] py-[0.5rem] rounded-[2rem] cursor-pointer",
+                { "bg-green100 border-green100 text-green500": filterFeaturedHouse === "HOUSE" },
+                { "border-[#E0E3EB] text-gray": filterFeaturedHouse !== "HOUSE" }
+              )}
+              onClick={() => setFilterFeaturedHouse("HOUSE")}
+            >
+              <IconHouse
+                className={filterFeaturedHouse === "HOUSE" ? "fill-green500" : "fill-gray"}
+              />{" "}
+              House
+            </div>
+            <div
+              className={classNames(
+                "group hover:bg-green100 hover:border-green100 hover:text-green500 border flex items-center gap-[0.5rem] font-medium text-[0.875rem] px-[1rem] py-[0.5rem] rounded-[2rem] cursor-pointer",
+                { "bg-green100 border-green100 text-green500": filterFeaturedHouse === "VILLA" },
+                { "border-[#E0E3EB] text-gray": filterFeaturedHouse !== "VILLA" }
+              )}
+              onClick={() => setFilterFeaturedHouse("VILLA")}
+            >
+              <IconVilla
+                className={
+                  filterFeaturedHouse === "VILLA"
+                    ? "fill-green500"
+                    : "fill-gray group-hover:fill-green500"
+                }
+              />{" "}
+              Villa
+            </div>
+            <div
+              className={classNames(
+                "group hover:bg-green100 hover:border-green100 hover:text-green500 border flex items-center gap-[0.5rem] font-medium text-[0.875rem] px-[1rem] py-[0.5rem] rounded-[2rem] cursor-pointer",
+                { "bg-green100 border-green100 text-green500": filterFeaturedHouse === "APARMENT" },
+                { "border-[#E0E3EB] text-gray": filterFeaturedHouse !== "APARMENT" }
+              )}
+              onClick={() => setFilterFeaturedHouse("APARMENT")}
+            >
+              <IconAparment
+                className={
+                  filterFeaturedHouse === "APARMENT"
+                    ? "fill-green500"
+                    : "fill-gray group-hover:fill-green500"
+                }
+              />{" "}
+              Aparment
+            </div>
+          </div>
+        </div>
+        <div className="w-full overflow-hidden xs:pl-[2.5rem]">
+          <Slider className="w-full grid grid-cols-[minmax(15.625rem,21.25rem)] xs:grid-cols-[repeat(auto-fill,21.25rem)] auto-cols-[minmax(15.625rem,21.25rem)] xs:auto-cols-[21.25rem] grid-flow-col gap-[1.5rem] xs:gap-[2.5rem] snap-mandatory snap-x overflow-x-auto">
+            {featuredHouse
+              .filter((d) => d.type === filterFeaturedHouse)
+              .map(({ image, type, status, name, price, owner }, i) => (
+                <Card
+                  key={i}
+                  image={image}
+                  type={type}
+                  status={status}
+                  name={name}
+                  price={price}
+                  owner={owner}
+                />
+              ))}
+          </Slider>
+        </div>
+      </section>
     </div>
   );
 };
+
+const Slider = styled.div`
+  ${hideScroll}
+`;
 
 export default Home;

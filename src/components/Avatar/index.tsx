@@ -6,12 +6,17 @@ interface IProps {
   src: string;
   isMini?: boolean;
   className?: string;
+  bordered?: boolean;
 }
-export const Avatar: React.FC<IProps> = ({ src, isMini, className }) => {
+export const Avatar: React.FC<IProps> = ({ src, isMini, bordered = false, className }) => {
   return (
     <div
       className={classNames(
-        "w-[3.5rem] h-[3.5rem] border-[0.1875rem] border-white rounded-[50%] overflow-hidden bg-[#ddd]",
+        "rounded-[50%] overflow-hidden bg-[#ddd]",
+        { "w-[2.5rem] h-[2.5rem]": isMini },
+        { "w-[3.5rem] h-[3.5rem]": !isMini },
+        { "border-white border-[0.1875rem]": bordered },
+
         className
       )}
     >

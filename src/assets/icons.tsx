@@ -77,3 +77,58 @@ export const IconColorBlur1: React.FC<ISVG> = ({ width, height, className }) => 
     </defs>
   </svg>
 );
+
+export const IconVilla: React.FC<ISVG> = ({ width, height, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || 24}
+    height={height || 24}
+    className={className}
+  >
+    <path d="M7 21H4c-.55 0-1-.45-1-1V8.69c0-.42.25-.79.64-.94l11-4.23a1 1 0 0 1 1.36.94V10H8c-.55 0-1 .45-1 1v10Zm10-9h-7c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h4v-4c0-.55.45-1 1-1s1 .45 1 1v4h4c.55 0 1-.45 1-1v-8c0-1.1-.9-2-2-2s-2 .9-2 2Z" />
+  </svg>
+);
+
+export const IconHouse: React.FC<ISVG> = ({ width, height, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={width || 24}
+    height={height || 24}
+    className={className}
+  >
+    <path d="M21 10.832V19.5a1.508 1.508 0 0 1-.792 1.326c-.216.117-.46.177-.706.174h-4.505a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v4.5a.75.75 0 0 1-.75.75H4.5a1.49 1.49 0 0 1-1.124-.507A1.544 1.544 0 0 1 3 19.466v-8.634a1.503 1.503 0 0 1 .491-1.11l7.5-6.819a1.494 1.494 0 0 1 2.018 0l7.5 6.819a1.504 1.504 0 0 1 .491 1.11Z" />
+  </svg>
+);
+
+export const IconAparment: React.FC<ISVG> = ({ width, height, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || 24}
+    height={height || 24}
+    className={className}
+  >
+    <path d="M17 11V5c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h6v-4h2v4h6c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2h-2ZM7 19H5v-2h2v2Zm0-4H5v-2h2v2Zm0-4H5V9h2v2Zm4 4H9v-2h2v2Zm0-4H9V9h2v2Zm0-4H9V5h2v2Zm4 8h-2v-2h2v2Zm0-4h-2V9h2v2Zm0-4h-2V5h2v2Zm4 12h-2v-2h2v2Zm0-4h-2v-2h2v2Z" />
+  </svg>
+);
+
+export const IconFire: React.FC<ISVG> = ({ width, height, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || 24}
+    height={height || 24}
+    className={className}
+  >
+    <path d="M13.033 7.331a5.43 5.43 0 0 0-1.295-1.8l-.455-.417a.126.126 0 0 0-.203.052l-.203.582c-.127.366-.36.74-.69 1.107a.098.098 0 0 1-.064.03.086.086 0 0 1-.067-.023.092.092 0 0 1-.031-.075c.058-.94-.223-2.001-.84-3.156-.508-.96-1.216-1.708-2.1-2.23l-.646-.38a.125.125 0 0 0-.187.115l.034.75c.023.512-.036.966-.177 1.342-.171.461-.418.89-.734 1.273a4.62 4.62 0 0 1-.742.72 5.51 5.51 0 0 0-1.567 1.9 5.434 5.434 0 0 0-.133 4.535 5.49 5.49 0 0 0 2.928 2.9A5.497 5.497 0 0 0 8 14.984c.742 0 1.46-.143 2.14-.426a5.447 5.447 0 0 0 1.747-1.167A5.41 5.41 0 0 0 13.5 9.533c0-.763-.156-1.503-.467-2.202Z" />
+  </svg>
+);
+export const IconWallet: React.FC<ISVG> = ({ width, height, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || 24}
+    height={height || 24}
+    className={className}
+  >
+    <path d="M12.8 4.8h-10v-.4l8.8-.704V4.4h1.2V3.2c0-.88-.713-1.498-1.583-1.374L3.184 2.974C2.313 3.098 1.6 3.92 1.6 4.8v8a1.6 1.6 0 0 0 1.6 1.6h9.6a1.6 1.6 0 0 0 1.6-1.6V6.4a1.6 1.6 0 0 0-1.6-1.6Zm-1.2 5.605a1.203 1.203 0 0 1-1.2-1.201 1.199 1.199 0 0 1 2.05-.848 1.2 1.2 0 0 1-.85 2.049Z" />
+  </svg>
+);

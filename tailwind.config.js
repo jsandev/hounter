@@ -16,6 +16,10 @@ module.exports = {
       green500: "#10B981",
       green100: "#D1FAE5",
       gray: "#888B97",
+      red500: "#EF4444",
+      red100: "#FEE2E2",
+      blue700: "#1D4ED8",
+      blue100: "#DBEAFE",
     },
     height: {
       none: "none",
