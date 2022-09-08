@@ -7,6 +7,9 @@ module.exports = {
     fontFamily: {
       lexend: ["Lexend", "sans-serif"],
     },
+    boxShadow: {
+      testimonial: "0px 9px 32px rgba(89, 92, 219, 0.05)",
+    },
     colors: {
       transparent: "transparent",
       white: "#FFFFFF",

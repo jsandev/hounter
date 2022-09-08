@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiStar } from "react-icons/fi";
 
 import { Avatar } from "components/Avatar";
 
@@ -23,7 +23,7 @@ import {
 import styled from "styled-components";
 import { hideScroll } from "styles/ui";
 import { Card, TCard } from "components/Card";
-import { featuredHouse } from "lib/data";
+import { featuredHouse, testimonials } from "lib/data";
 import classNames from "classnames";
 
 const Home: NextPage = () => {
@@ -318,11 +318,73 @@ const Home: NextPage = () => {
           <Image src={require("assets/images/section-video.png")} />
         </div>
       </section>
+      <section className="w-full max-w-[79rem] mx-auto flex flex-col items-center gap-[2.5rem] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem] overflow-hidden">
+        <div className="flex flex-col gap-[0.75rem]">
+          <div className="flex flex-col items-center gap-[0.5rem]">
+            <span className="w-[2rem] h-[0.0625rem] bg-orange"></span>
+            <h6 className="font-medium text-[0.875rem] text-orange">See Our Review</h6>
+          </div>
+          <h1 className="font-semibold text-[2rem] text-bluedark text-center xs:pl-[2.5rem]">
+            What Our User Say About Us
+          </h1>
+        </div>
+        <TestimonialScroll className="w-full flex flex-col md:flex-row flex-nowrap items-center gap-[2rem] snap-mandatory snap-x overflow-x-auto">
+          {testimonials.map(({ image, title, description, user }, i) => (
+            <div
+              key={i}
+              className="relative w-full md:min-w-[450px] md:max-w-[600px] snap-start overflow-hidden p-[0.5rem] md:p-0 md:pb-[7.5rem]"
+            >
+              <div className="w-full hidden md:flex">
+                <Image
+                  width={1260}
+                  height={750}
+                  src={image}
+                  objectFit="cover"
+                  className="rounded-[0.5rem]"
+                />
+              </div>
+              <div className="md:absolute md:bottom-[1rem] md:left-[50%] md:-translate-x-1/2 md:w-[90%] bg-white flex flex-col gap-[1.5rem] shadow-testimonial p-[1rem] xs:p-[2rem] rounded-[1rem] overflow-hidden">
+                <div className="flex flex-col gap-[1rem]">
+                  <h1 className="font-semibold text-[1rem] text-bluedark text-center md:text-left">
+                    {title}
+                  </h1>
+                  <p className="font-normal text-[0.875rem] text-gray leading-[1.5rem] text-center md:text-left">
+                    {description}
+                  </p>
+                </div>
+                <div className="w-full flex flex-col xs:flex-row xs:justify-between items-center md:items-end gap-[1rem] xs:gap-0">
+                  <div className="flex flex-col xs:flex-row items-center gap-[1rem] xs:gap-[1.5rem]">
+                    <Avatar isMini src={user.avatar} />
+                    <div className="flex flex-col gap-[0.25rem] whitespace-nowrap items-center xs:items-start">
+                      <h1 className="font-medium text-[0.875rem] text-bluedark leading-[1.375rem]">
+                        {user.name}
+                      </h1>
+                      <h3 className="font-medium text-[0.875rem] text-gray leading-[1.375rem]">
+                        {user.major}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-[1rem]">
+                    <FiStar size={28} className="fill-orange stroke-orange" />
+                    <span className="font-semibold text-[1.25rem] text-[#3C4563] leading-[1.75rem]">
+                      4.6
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </TestimonialScroll>
+      </section>
     </div>
   );
 };
 
 const Slider = styled.div`
+  ${hideScroll}
+`;
+
+const TestimonialScroll = styled.div`
   ${hideScroll}
 `;
 

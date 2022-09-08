@@ -114,3 +114,55 @@ export const featuredHouse: ICard[] = [
     },
   },
 ];
+
+interface ITestimonial {
+  image: string;
+  title: string;
+  description: string;
+  user: {
+    avatar: string;
+    name: string;
+    major: string;
+  };
+}
+export const testimonials: ITestimonial[] = [
+  {
+    image:
+      "https://images.pexels.com/photos/32870/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "My house sold out fast!",
+    description:
+      "I was finally able to sell my house quickly through Hounter by immediately setting me up with people who wanted my house. I also do not get a discount from the sale of my house. Awesome!",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600",
+      name: "Courtney Henry",
+      major: "CEO Andarafish",
+    },
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Best! I got the house I wanted through Hounter",
+    description:
+      "Through this website I can get a house with the type and specifications I want very easily, without a complicated process to be able to find information on the house we want.",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=600",
+      name: "Dianne Russell",
+      major: "Manager Director",
+    },
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Through the Hounter, I can get a house for my self",
+    description:
+      "By looking for information about what kind of house we want, we managed to get the house we wanted very quickly, and directly connected with the seller to be able to ask about the details, very helpful!",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/894077/pexels-photo-894077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "Esther Howard",
+      major: "Head of Marketing",
+    },
+  },
+];
