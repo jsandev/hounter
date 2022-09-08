@@ -166,3 +166,68 @@ export const testimonials: ITestimonial[] = [
     },
   },
 ];
+
+interface ITip {
+  image: string;
+  user: {
+    avatar: string;
+    name: string;
+  };
+  title: string;
+  description: string;
+  date: string;
+}
+export const tipsAndTricks: ITip[] = [
+  {
+    image:
+      "https://images.pexels.com/photos/36355/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/2118709/pexels-photo-2118709.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      name: "Dianne Russell",
+    },
+    title: "The things we need to check when we want to buy a house",
+    description:
+      "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
+    date: "4 min read | 25 Apr 2021",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/3935320/pexels-photo-3935320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "Courtney Henry",
+    },
+    title: "7 Ways to distinguish the quality of the house we want to buy",
+    description:
+      "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
+    date: "6 min read | 24 Apr 2021",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/2962146/pexels-photo-2962146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "Darlene Robertson",
+    },
+    title: "The best way to know the quality of the house we want to buy",
+    description:
+      "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
+    date: "2 min read | 24 Apr 2021",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/8288954/pexels-photo-8288954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    user: {
+      avatar:
+        "https://images.pexels.com/photos/819530/pexels-photo-819530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "Cameron Williamson",
+    },
+    title: "12 Things to know before buying a house",
+    description:
+      "Want to buy a house but are unsure about what we should know, here I will try to explain what we should know and check when we want to buy a house",
+    date: "8 min read | 25 Apr 2021",
+  },
+];

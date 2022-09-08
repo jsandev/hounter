@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FiMenu, FiStar } from "react-icons/fi";
+import { FiClock, FiMenu, FiStar } from "react-icons/fi";
 
 import { Avatar } from "components/Avatar";
 
@@ -23,7 +23,7 @@ import {
 import styled from "styled-components";
 import { hideScroll } from "styles/ui";
 import { Card, TCard } from "components/Card";
-import { featuredHouse, testimonials } from "lib/data";
+import { featuredHouse, testimonials, tipsAndTricks } from "lib/data";
 import classNames from "classnames";
 
 const Home: NextPage = () => {
@@ -354,7 +354,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="w-full flex flex-col xs:flex-row xs:justify-between items-center md:items-end gap-[1rem] xs:gap-0">
                   <div className="flex flex-col xs:flex-row items-center gap-[1rem] xs:gap-[1.5rem]">
-                    <Avatar isMini src={user.avatar} />
+                    <Avatar size="md" src={user.avatar} />
                     <div className="flex flex-col gap-[0.25rem] whitespace-nowrap items-center xs:items-start">
                       <h1 className="font-medium text-[0.875rem] text-bluedark leading-[1.375rem]">
                         {user.name}
@@ -375,6 +375,68 @@ const Home: NextPage = () => {
             </div>
           ))}
         </TestimonialScroll>
+      </section>
+      <section className="w-full max-w-[79rem] mx-auto flex flex-col items-center gap-[2.5rem] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="w-full max-w-[26.5rem] flex flex-col items-center gap-[1.5rem]">
+          <div className="flex flex-col gap-[0.75rem]">
+            <div className="flex flex-col items-center gap-[0.5rem]">
+              <span className="w-[2rem] h-[0.0625rem] bg-orange"></span>
+              <h6 className="font-medium text-[0.875rem] text-orange">
+                See tips and trick from our partnership
+              </h6>
+            </div>
+            <h1 className="font-semibold text-[2rem] text-bluedark text-center capitalize">
+              Find out more about selling and buying homes
+            </h1>
+          </div>
+          <button className="bg-green500 font-semibold text-[0.875rem] text-white px-[1rem] py-[0.75rem] rounded-[2rem]">
+            More Artikel
+          </button>
+        </div>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[minmax(300px,572px)_minmax(300px,1fr)] gap-y-[2.5rem] gap-x-[3.75rem]">
+          {tipsAndTricks.map(({ image, user, title, description, date }, i) => (
+            <div
+              key={i}
+              className={classNames(
+                "w-full flex items-start gap-[2rem]",
+                { "flex-col md:flex-row lg:flex-col lg:col-span-1 lg:row-span-3 ": i === 1 },
+                { "flex-col md:flex-row": i !== 1 }
+              )}
+            >
+              <div
+                className={classNames(
+                  "rounded-[1rem] overflow-hidden",
+                  { "w-full lg:max-w-[12.5rem]": i !== 1 },
+                  { "w-full": i === 1 }
+                )}
+              >
+                <img src={image} alt={title} className="w-full h-full object-cover object-center" />
+              </div>
+              <div className="w-full flex flex-col gap-[1rem]">
+                <div className="w-full flex flex-col gap-[0.75rem]">
+                  <div className="w-full flex items-center gap-[1rem]">
+                    <Avatar src={user.avatar} size="sm" />
+                    <h3 className="font-normal text-[0.875rem] text-[#3C4563]">{user.name}</h3>
+                  </div>
+                  <h1 className="font-medium text-[1.125rem] text-bluedark leading-[1.5rem]">
+                    {title}
+                  </h1>
+                  <p
+                    className={classNames("font-normal text-[0.875rem] text-gray", {
+                      "block lg:hidden": i !== 1,
+                    })}
+                  >
+                    {description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-[0.75rem]">
+                  <FiClock size={24} className="stroke-gray" />
+                  <span className="font-normal text-[0.875rem] text-gray">{date}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

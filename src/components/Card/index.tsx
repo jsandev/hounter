@@ -71,7 +71,7 @@ export const Card: React.FC<ICard> = ({ image, status, name, price, owner }) => 
         </h3>
       </div>
       <div className="w-full flex items-center gap-[1rem]">
-        <Avatar src={owner.avatar} isMini />
+        <Avatar src={owner.avatar} size="md" />
         <div className="flex flex-col gap-[0.25rem]">
           <h3 className="font-medium text-[1rem] xs:text-[1.125rem] text-[#0E1735]">
             {owner.name}

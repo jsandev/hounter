@@ -4,17 +4,18 @@ import classNames from "classnames";
 
 interface IProps {
   src: string;
-  isMini?: boolean;
+  size?: "sm" | "md" | "lg";
   className?: string;
   bordered?: boolean;
 }
-export const Avatar: React.FC<IProps> = ({ src, isMini, bordered = false, className }) => {
+export const Avatar: React.FC<IProps> = ({ src, size = "lg", bordered = false, className }) => {
   return (
     <div
       className={classNames(
         "rounded-[50%] overflow-hidden bg-[#ddd]",
-        { "w-[2.5rem] h-[2.5rem]": isMini },
-        { "w-[3.5rem] h-[3.5rem]": !isMini },
+        { "w-[3.5rem] h-[3.5rem]": size === "lg" },
+        { "w-[2.5rem] h-[2.5rem]": size === "md" },
+        { "w-[2rem] h-[2rem]": size === "sm" },
         { "border-white border-[0.1875rem]": bordered },
 
         className
