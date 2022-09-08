@@ -256,7 +256,10 @@ const Home: NextPage = () => {
           </Slider>
         </div>
       </section>
-      <section className="w-full max-w-[79rem] mx-auto grid md:grid-cols-[auto_minmax(150px,600px)] gap-[3.125rem] items-center justify-between px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+      <section className="relative w-full max-w-[79rem] mx-auto grid md:grid-cols-[auto_minmax(150px,600px)] gap-[3.125rem] items-center justify-between px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="absolute -top-[200px] -right-[200px] w-[553px] h-[560px] -z-[1]">
+          <Image width={553} height={560} src={require("assets/images/blur2.png")} />
+        </div>
         <div className="w-full md:max-w-[32.75rem] flex flex-col items-center gap-[1rem] xs:gap-[2rem]">
           <div className="flex flex-col items-center gap-[1rem]">
             <div className="flex flex-col">
@@ -377,7 +380,10 @@ const Home: NextPage = () => {
           ))}
         </TestimonialScroll>
       </section>
-      <section className="w-full max-w-[79rem] mx-auto flex flex-col items-center gap-[2.5rem] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+      <section className="relative w-full max-w-[79rem] mx-auto flex flex-col items-center gap-[2.5rem] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="absolute -top-[55px] -left-[200px] w-[522px] h-[696px] -z-[1]">
+          <Image width={522} height={696} src={require("assets/images/blur3.png")} />
+        </div>
         <div className="w-full max-w-[26.5rem] flex flex-col items-center gap-[1.5rem]">
           <div className="flex flex-col gap-[0.75rem]">
             <div className="flex flex-col items-center gap-[0.5rem]">
