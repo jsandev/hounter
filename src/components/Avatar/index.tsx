@@ -20,7 +20,7 @@ export const Avatar: React.FC<IProps> = ({ src, isMini, bordered = false, classN
         className
       )}
     >
-      <Image width={56} height={56} src={src} objectFit="cover" objectPosition="center" />
+      <Image width={100} height={100} src={src} objectFit="cover" objectPosition="center" />
     </div>
   );
 };

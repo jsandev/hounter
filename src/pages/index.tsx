@@ -8,8 +8,13 @@ import { Avatar } from "components/Avatar";
 
 import {
   IconAparment,
+  IconBath,
+  IconBed,
+  IconCall,
   IconChevronRight,
   IconColorBlur1,
+  IconFloor,
+  IconGarage,
   IconHouse,
   IconLogo,
   IconMap,
@@ -248,6 +253,69 @@ const Home: NextPage = () => {
                 />
               ))}
           </Slider>
+        </div>
+      </section>
+      <section className="w-full max-w-[79rem] mx-auto grid md:grid-cols-[auto_minmax(150px,600px)] gap-[3.125rem] items-center justify-between px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="w-full md:max-w-[32.75rem] flex flex-col items-center gap-[1rem] xs:gap-[2rem]">
+          <div className="flex flex-col items-center gap-[1rem]">
+            <div className="flex flex-col">
+              <div className="flex flex-row items-center gap-[0.5rem]">
+                <span className="hidden xs:block w-[2rem] h-[0.0625rem] bg-orange"></span>
+                <h6 className="font-medium text-[0.875rem] text-orange">Ready to Sell!</h6>
+              </div>
+              <h1 className="font-semibold text-[2rem] text-bluedark xs:pl-[2.5rem] mt-[0.75rem] mb-[1rem]">
+                Let’s Tour And See Our House!
+              </h1>
+              <p className="font-normal text-[1rem] text-[#626687] leading-[1.75rem] xs:pl-[2.5rem]">
+                Houses recommended by our partners that have been curated to become the home of your
+                dreams!
+              </p>
+            </div>
+            <div className="w-full flex flex-col gap-[1rem] xs:pl-[2.5rem]">
+              <h3 className="font-semibold text-[1rem] text-bluedark leading-[1.75rem]">
+                House Detail
+              </h3>
+              <div className="grid xs:grid-cols-2 gap-y-[0.5rem] xs:gap-y-[1rem] gap-x-[3.125rem]">
+                <div className="flex items-center gap-[1rem] font-medium text-[1rem] text-[#3C4563]">
+                  <IconBed className="fill-gray" />4 Bedrooms
+                </div>
+                <div className="flex items-center gap-[1rem] font-medium text-[1rem] text-[#3C4563]">
+                  <IconBath className="fill-gray" />2 Bathrooms
+                </div>
+                <div className="flex items-center gap-[1rem] font-medium text-[1rem] text-[#3C4563]">
+                  <IconGarage className="fill-gray" />1 Carport
+                </div>
+                <div className="flex items-center gap-[1rem] font-medium text-[1rem] text-[#3C4563]">
+                  <IconFloor className="fill-gray" />2 Floors
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full max-w-[27.5rem] h-[0.125rem] bg-[#F0F3FD] xs:pl-[2.5rem]"></div>
+
+          <div className="w-full flex flex-col xs:flex-row justify-start xs:items-center gap-[1.5rem] xs:pl-[2.5rem]">
+            <div className="flex flex-row justify-center xs:justify-between items-center gap-[1.5rem]">
+              <Avatar src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600" />
+              <div className="flex flex-col gap-[0.25rem] whitespace-nowrap">
+                <h1 className="font-medium text-[1.125rem] text-bluedark leading-[1.5rem]">
+                  Dianne Russell
+                </h1>
+                <h3 className="font-medium text-[1rem] text-gray leading-[1.5rem]">
+                  Manager Director
+                </h3>
+              </div>
+            </div>
+            <div className="bg-green500 flex flex-row flex-wrap items-center justify-center gap-[1rem] px-[1rem] py-[0.75rem] rounded-[2rem] whitespace-nowrap">
+              <IconCall className="fill-white" />
+              <span className="flex xs:hidden lg:flex font-semibold text-[0.875rem] text-white">
+                Contact Now
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="flex">
+          <Image src={require("assets/images/section-video.png")} />
         </div>
       </section>
     </div>
