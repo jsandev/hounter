@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiClock, FiMenu, FiStar } from "react-icons/fi";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 import { Avatar } from "components/Avatar";
 
@@ -468,6 +469,74 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+      <footer className="relative w-full max-w-[79rem] mx-auto grid grid-cols-1 md:grid-cols-[auto_auto_auto] lg:grid-cols-[minmax(300px,320px)_auto_auto_auto] justify-items-center gap-[80px] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="absolute -bottom-[150px] -right-[250px] w-[740px] h-[503px] -z-[1]">
+          <Image width={740} height={503} src={require("assets/images/blur4.png")} />
+        </div>
+        <div className="w-full max-w-[400px] lg:max-w-none flex flex-col items-center lg:items-start md:col-span-3 lg:col-span-1">
+          <IconLogo />
+          <h3 className="font-normal text-[0.875rem] text-gray text-center lg:text-left leading-[1.5rem] mt-[1rem] mb-[1.5rem]">
+            We provide information about properties such as houses, villas and apartments to help
+            people find their dream home
+          </h3>
+          <div className="flex items-center gap-[1.5rem]">
+            <FaFacebookF size={32} className="fill-[#3C4563]" />
+            <FaTwitter size={32} className="fill-[#3C4563]" />
+            <FaInstagram size={32} className="fill-[#3C4563]" />
+          </div>
+        </div>
+        <div className="flex flex-col items-center lg:items-start gap-[1.5rem]">
+          <h1 className="font-semibold text-[1.125rem] text-bluedark text-center lg:text-left">
+            Property
+          </h1>
+          <div className="flex flex-col gap-[1.125rem]">
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              House
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              Apartment
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              Villa
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col items-center lg:items-start gap-[1.5rem]">
+          <h1 className="font-semibold text-[1.125rem] text-bluedark text-center lg:text-left">
+            Article
+          </h1>
+          <div className="flex flex-col gap-[1.125rem]">
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              New Article
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              Popular Article
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              Most Read
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              Tips & Tricks
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col items-center lg:items-start gap-[1.5rem]">
+          <h1 className="font-semibold text-[1.125rem] text-bluedark text-center lg:text-left">
+            Contact
+          </h1>
+          <div className="flex flex-col gap-[1.125rem]">
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              2464 Royal Ln. Mesa, New Jersey 45463
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              (671) 555-0110
+            </span>
+            <span className="font-normal text-[0.875rem] text-gray text-center lg:text-left">
+              info@hounter.com
+            </span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
