@@ -13,6 +13,7 @@ import {
   IconCall,
   IconChevronRight,
   IconColorBlur1,
+  IconEmail,
   IconFloor,
   IconGarage,
   IconHouse,
@@ -436,6 +437,29 @@ const Home: NextPage = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+      <section className="w-full max-w-[79rem] mx-auto flex flex-col items-center gap-[2.5rem] px-[1rem] pb-[7.5rem] xs:px-[1.5rem] lg:px-[2rem]">
+        <div className="w-full flex justify-center relative">
+          <div className="hidden md:block ">
+            <Image className="rounded-[2rem]" src={require("assets/images/newsletter.png")} />
+          </div>
+          <div className="md:absolute md:top-[50%] md:left-[50%] md:-translate-x-1/2 md:-translate-y-1/2 w-full max-w-[496px] flex flex-col items-center gap-[2rem]">
+            <h1 className="font-semibold text-[1.5rem] lg:text-[2rem] text-bluedark text-center capitalize lg:leading-[3rem]">
+              Subscribe For More Info and update from Hounter
+            </h1>
+            <div className="w-full grid grid-cols-[1fr] xs:grid-cols-[auto_1fr_auto] gap-[1rem] items-center bg-white xs:border border-[#ddd] rounded-[2rem] xs:pl-[1.5rem] pr-[0.25rem] py-[0.25rem]">
+              <IconEmail className="hidden xs:block fill-blue700" />
+              <input
+                type="email"
+                placeholder="Your email here"
+                className="appearance-none outline-0 w-full h-[2.8125rem] xs:h-full border border-[#ddd] xs:border-none font-medium text-[0.875rem] text-gray placeholder:font-medium placeholder:text-[0.875rem] placeholder:text-gray rounded-[2rem] pl-[0.875rem] xs:pl-0"
+              />
+              <button className="appearance-none outline-none bg-green500 font-semibold text-[0.875rem] text-white px-[1rem] py-[0.75rem] rounded-[2rem] whitespace-nowrap">
+                Subscribe now
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
