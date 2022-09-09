@@ -20,24 +20,28 @@ export interface ICard {
   };
 }
 export const Card: React.FC<ICard> = ({ image, status, name, price, owner }) => {
-  const { backgroundStatus, iconStatus } = useMemo(() => {
+  const { backgroundStatus, iconStatus, textColor } = useMemo(() => {
     let backgroundStatus = "";
+    let textColor = "";
     let iconStatus: any = null;
 
     switch (status) {
       case "New House": {
         iconStatus = <IconHouse width={16} height={16} className="fill-blue700" />;
-        backgroundStatus = "blue100";
+        backgroundStatus = "#DBEAFE";
+        textColor = "#1D4ED8";
         break;
       }
       case "Best Deals": {
         iconStatus = <IconWallet width={16} height={16} className="fill-green700" />;
-        backgroundStatus = "green100";
+        backgroundStatus = "#D1FAE5";
+        textColor = "#047857";
         break;
       }
       default: {
         iconStatus = <IconFire width={16} height={16} className="fill-red500" />;
-        backgroundStatus = "red100";
+        backgroundStatus = "#FEE2E2";
+        textColor = "#EF4444";
         break;
       }
     }
@@ -45,6 +49,7 @@ export const Card: React.FC<ICard> = ({ image, status, name, price, owner }) => 
     return {
       backgroundStatus,
       iconStatus,
+      textColor,
     };
   }, [status]);
 
@@ -53,7 +58,8 @@ export const Card: React.FC<ICard> = ({ image, status, name, price, owner }) => 
       <div className="relative w-full max-h-[23.875rem] rounded-[1.5rem] overflow-hidden select-none">
         <Image width={340} height={382} objectFit="cover" layout="responsive" src={image} />
         <div
-          className={`absolute left-[1rem] bottom-[1rem] bg-${backgroundStatus} flex justify-center items-center gap-[0.625rem] font-medium text-[0.875rem] text-${backgroundStatus} px-[1rem] py-[0.5rem] rounded-[2rem]`}
+          className="absolute left-[1rem] bottom-[1rem] flex justify-center items-center gap-[0.625rem] font-medium text-[0.875rem] px-[1rem] py-[0.5rem] rounded-[2rem]"
+          style={{ background: backgroundStatus, color: textColor }}
         >
           {iconStatus}
           {status}
